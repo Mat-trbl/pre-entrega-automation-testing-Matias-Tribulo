@@ -20,9 +20,20 @@ def test_login(driver):
      # validacion del ingreso a la pagina de inventario
      assert driver.current_url == 'https://www.saucedemo.com/inventory.html'
      # validacion del titulo de la pagina del inventario
+     logo = driver.find_element(By.CSS_SELECTOR,"div.primary_header .app_logo").text
+     assert logo == 'Swag Labs'
      title = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
-     
      assert title == 'Products'
 
-
+def test_catalogo(driver):
+     # logueo de la pagina
+     login(driver)
+     # validacion del titulo de la pagina del inventario
+     title = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
+     assert title == 'Products'
+     # verifico que la pagina contenga al menos un producto
+     products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+     assert len(products) > 0
+     # verifico la estructura de la pagina
+     
 
