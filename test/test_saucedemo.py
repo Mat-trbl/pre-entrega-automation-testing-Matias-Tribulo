@@ -21,8 +21,9 @@ def test_login(driver):
      assert driver.current_url == 'https://www.saucedemo.com/inventory.html'
      # validacion del titulo de la pagina del inventario
      title = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
-     print(title)
+     
      assert title == 'Products'
+     print('titulo de la seccion OK',title)
 
 
 
