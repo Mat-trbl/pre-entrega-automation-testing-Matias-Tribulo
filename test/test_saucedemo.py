@@ -23,7 +23,6 @@ def test_login(driver):
      title = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
      
      assert title == 'Products'
-     print('titulo de la seccion OK',title)
 
 
 
