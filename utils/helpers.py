@@ -5,6 +5,8 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support.expected_conditions import presence_of_all_elements_located as EC_presence
 import time
 
 URL_page = 'https://www.saucedemo.com/'
@@ -16,6 +18,9 @@ login_button =(By.ID,"login-button")
 
 
 def get_driver():
+    
+    chrome_options = Options()
+
     #Instalacion del driver
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
@@ -39,3 +44,25 @@ def login(driver):
         EC.element_to_be_clickable(login_button)
     ).click()
 
+def element_selection(driver,element):
+    WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable(element)
+    ).click()
+
+#def is_element_visible(driver, element) -> bool:
+#    
+#    #Comprueba si un elemento está visible en la página.
+#    try:
+#        
+#        sidebar_menu = driver.find_element(element)
+#        style = sidebar_menu.get_attribute("style")
+#        print('esto ese', style)
+#        assert "-100%" in style
+#        return True
+#    except TimeoutException:
+#        # El elemento no se hizo visible dentro del tiempo de espera.
+#        return False
+#    except Exception as e:
+#        # Manejo de otros posibles errores (e.g., driver error)
+#        print(f"Ocurrió un error al verificar la visibilidad de {element}: {e}")
+#        return False
