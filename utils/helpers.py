@@ -1,8 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.service import Service
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
@@ -18,12 +18,12 @@ login_button =(By.ID,"login-button")
 
 
 def get_driver():
-    
+
     chrome_options = Options()
 
     #Instalacion del driver
-    service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service)
+    service = Service(GeckoDriverManager().install())
+    driver = webdriver.Firefox(service=service)
 
     #time.sleep(2)
     driver.implicitly_wait(5)
