@@ -39,18 +39,6 @@ def test_catalogo(driver):
      assert len(products) > 0
      print('el contenido del menu es de:', len(products))
     
-     # verifico la estructura de la pagina
-     #element = (By.CLASS_NAME, "bm-menu-wrap")
-     #is_element_visible(driver,element)
-     #element = (By.ID,'react-burger-menu-btn')
-     #element_selection(driver,element)
-     #time.sleep(2)
-     #driver.save_screenshot('menu.png')
-
-     #element = (By.ID, 'bm-menu-wrap')
-     #is_element_visible(driver,element)
-     #menu = driver.find_elements(By.CLASS_NAME, 'bm-menu')
-
 def test_carrito(driver):
      # logueo de la pagina
      login(driver)
@@ -62,7 +50,7 @@ def test_carrito(driver):
      element_selection(driver,element)
      time.sleep(5)
      driver.save_screenshot('carrito.png')
-     # compruebo que se agrego el, producto al carritoctiomn
+     # compruebo que se agrego el, producto al carrito
      badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
      assert badge > "0"
      # abrir carrito
