@@ -54,22 +54,27 @@ def test_catalogo(driver):
 def test_carrito(driver):
      # logueo de la pagina
      login(driver)
-     #seleccionar producto y agreagra a carrito
+     # seleccionar producto y agreagra a carrito
      products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
      element = products[0].find_element(By.ID, 'add-to-cart-sauce-labs-backpack')
+     chosen_product = products[0].find_element(By.CLASS_NAME, 'inventory_item_name').text
+     print('el producto es', chosen_product)
      element_selection(driver,element)
      time.sleep(5)
      driver.save_screenshot('carrito.png')
-     #compruebo que se agrego el, producto al carrito
+     # compruebo que se agrego el, producto al carritoctiomn
      badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
      assert badge > "0"
-     #abrir carrito
-     #element_p = (By.CLASS_NAME, "shopping_cart_link")
-     #element_selection(driver,element_p)
-     #assert driver.current_url == 'https://www.saucedemo.com/cart.html
-     
-     cart = driver.find_element(By.CLASS_NAME,'shopping_cart_link')
-     cart.click()
-     time.sleep(5)
+     # abrir carrito
+     element_p = (By.CLASS_NAME, "shopping_cart_link")
+     element_selection(driver,element_p)
+     assert driver.current_url == 'https://www.saucedemo.com/cart.html'
+     # comprobar el producto agregado
+     cart_item = driver.find_elements(By.CLASS_NAME, 'cart_list')
+     cart_item_name = cart_item[0].find_element(By.CLASS_NAME, 'inventory_item_name').text
+     assert chosen_product == cart_item_name
+
+
+
 
 
