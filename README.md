@@ -1,6 +1,6 @@
 # 🧪 Proyecto de Automatización de Pruebas: SauceDemo
 
-En este proyecto se realizo una **automatización de pruebas** para el sitio web **SauceDemo** ($\text{https://www.saucedemo.com/}$), utilizando **Selenium WebDriver** y **Python**.
+En este proyecto se realizo una **automatización de pruebas** para el sitio web **SauceDemo** (https://www.saucedemo.com/), utilizando **Selenium WebDriver** y **Python**.
 
 ## 🎯 Propósito del Proyecto
 
@@ -37,9 +37,9 @@ Sigue estos pasos para configurar el entorno y ejecutar las pruebas:
 
 Los siguientes casos de prueba están implementados en el archivo `tests/test_saucedemo.py`:
 
-* **`test_login`**: Carga las credanciales apara loguearse y verifica el acceso correcto a la página de inventario después de un inicio de sesión exitoso.
+* **`test_login`**: Carga las credenciales para loguearse y verifica el acceso correcto a la página de inventario después de un inicio de sesión exitoso.
 * **`test_catalogo`**: Comprueba la correcta visualización de productos y la accesibilidad del menú principal.
-* **`test_carrito`**: Valida que la funcionalidad de **agregar un producto al carrito** funcione correctamente.
+* **`test_carrito`**: Valida que la funcionalidad, de **agregar un producto al carrito**, funcione correctamente.
 
 ***
 
