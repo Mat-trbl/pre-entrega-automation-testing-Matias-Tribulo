@@ -19,7 +19,7 @@ def driver():
 
 def test_login(driver):
      login(driver)
-     driver.save_screenshot('intro.png')
+     driver.save_screenshot('screenshot/inventario.png')
      # validacion del ingreso a la pagina de inventario
      assert driver.current_url == 'https://www.saucedemo.com/inventory.html'
      # validacion del titulo de la pagina del inventario
@@ -49,7 +49,7 @@ def test_carrito(driver):
      print('el producto es', chosen_product)
      element_selection(driver,element)
      time.sleep(5)
-     driver.save_screenshot('carrito.png')
+     driver.save_screenshot('screenshot/producto_en_carrito.png')
      # compruebo que se agrego el, producto al carrito
      badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
      assert badge > "0"
@@ -57,6 +57,7 @@ def test_carrito(driver):
      element_p = (By.CLASS_NAME, "shopping_cart_link")
      element_selection(driver,element_p)
      assert driver.current_url == 'https://www.saucedemo.com/cart.html'
+     driver.save_screenshot('screenshot/carrito.png')
      # comprobar el producto agregado
      cart_item = driver.find_elements(By.CLASS_NAME, 'cart_list')
      cart_item_name = cart_item[0].find_element(By.CLASS_NAME, 'inventory_item_name').text

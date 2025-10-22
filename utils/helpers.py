@@ -39,7 +39,7 @@ def login(driver):
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(login_password_box)
     ).send_keys(login_password)
-    driver.save_screenshot('login.png')
+    driver.save_screenshot('screenshot/login.png')
     WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(login_button)
     ).click()
