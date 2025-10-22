@@ -1,10 +1,10 @@
 # 🧪 Proyecto de Automatización de Pruebas: SauceDemo
 
-Este proyecto se realizo una **automatización de pruebas** para el sitio web de demostración **SauceDemo** ($\text{https://www.saucedemo.com/}$), utilizando **Selenium WebDriver** y **Python**.
+En este proyecto se realizo una **automatización de pruebas** para el sitio web **SauceDemo** ($\text{https://www.saucedemo.com/}$), utilizando **Selenium WebDriver** y **Python**.
 
 ## 🎯 Propósito del Proyecto
 
-El objetivo principal es automatizar los flujos de navegacion web dentro de la página **SauceDemo** y **garantizar** que las funcinalidaes y elemento del sitio web se comporten como se espera mediante pruebas automatizadas.
+El objetivo principal es automatizar los flujos de navegacion web dentro de la página **SauceDemo** y **garantizar** que las funcionalidaes y elemento del sitio web se comporten como se espera mediante pruebas automatizadas.
 
 ***
 
@@ -22,17 +22,8 @@ Las siguientes tecnologías y librerías son fundamentales para el desarrollo y 
 ## 📁 Estructura del Proyecto
 
 La estructura de directorios y archivos es la siguiente:
+├── README.md # Documentación del proyecto. ├── tests/ │ └── test_saucedemo.py # 📝 Archivo principal con los casos de prueba. ├── utils/ │ └── helpers.py # ⚙️ Configuración del WebDriver (Chrome) y funciones auxiliares. └── reports/ # 📊 Directorio para los reportes HTML y capturas de pantalla.
 
-├── README.md # Documentación del proyecto. 
-├── tests/ 
-|   │ 
-|   └── test_saucedemo.py # 📝 Archivo principal con los casos de prueba. 
-├── utils/ 
-|     └── __init__.py
-│     └── helpers.py # ⚙️ Configuración del WebDriver (Chrome) y funciones auxiliares.
-|     
-└── reports/ # 📊 Directorio para los reportes HTML 
-└── screenshoot/ # 📊 Directorio capturas de pantalla.
 ***
 
 ## ⚙️ Instalación y Configuración
@@ -53,8 +44,8 @@ Sigue estos pasos para configurar el entorno y ejecutar las pruebas:
 
 Los siguientes casos de prueba están implementados en el archivo `tests/test_saucedemo.py`:
 
-* **`test_login`**: Verifica el acceso correcto a la página de inventario después de un inicio de sesión exitoso.
-* **`test_catalogo`**: Comprueba la correcta visualización de productos, el funcionamiento de los filtros y la accesibilidad del menú principal.
+* **`test_login`**: Carga las credanciales apara loguearse y verifica el acceso correcto a la página de inventario después de un inicio de sesión exitoso.
+* **`test_catalogo`**: Comprueba la correcta visualización de productos y la accesibilidad del menú principal.
 * **`test_carrito`**: Valida que la funcionalidad de **agregar un producto al carrito** funcione correctamente.
 
 ***
