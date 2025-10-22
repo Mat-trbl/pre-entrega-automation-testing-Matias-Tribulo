@@ -19,13 +19,6 @@ Las siguientes tecnologías y librerías son fundamentales para el desarrollo y 
 
 ***
 
-## 📁 Estructura del Proyecto
-
-La estructura de directorios y archivos es la siguiente:
-├── README.md # Documentación del proyecto. ├── tests/ │ └── test_saucedemo.py # 📝 Archivo principal con los casos de prueba. ├── utils/ │ └── helpers.py # ⚙️ Configuración del WebDriver (Chrome) y funciones auxiliares. └── reports/ # 📊 Directorio para los reportes HTML y capturas de pantalla.
-
-***
-
 ## ⚙️ Instalación y Configuración
 
 Sigue estos pasos para configurar el entorno y ejecutar las pruebas:
