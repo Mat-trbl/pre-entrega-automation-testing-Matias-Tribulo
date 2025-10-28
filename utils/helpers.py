@@ -12,9 +12,8 @@ import time
 URL_page = 'https://www.saucedemo.com/'
 login_name = 'standard_user'
 login_password = 'secret_sauce'
-login_name_box = (By.NAME,"user-name")
-login_password_box = (By.NAME,"password")
-login_button =(By.ID,"login-button")
+
+
 
 
 def get_driver():
@@ -29,25 +28,25 @@ def get_driver():
     driver.implicitly_wait(5)
     return(driver)
 
-def login(driver):
-    driver.get(URL_page)
+#def login(driver):
+#    driver.get(URL_page)
+#
+#    #Ingreso de credenciales de login
+#    WebDriverWait(driver, 10).until(
+#        EC.element_to_be_clickable(login_name_box)
+#    ).send_keys(login_name)
+#    WebDriverWait(driver, 10).until(
+#        EC.element_to_be_clickable(login_password_box)
+#    ).send_keys(login_password)
+#    driver.save_screenshot('screenshot/login.png')
+#    WebDriverWait(driver, 10).until(
+#        EC.element_to_be_clickable(login_button)
+#    ).click()
 
-    #Ingreso de credenciales de login
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(login_name_box)
-    ).send_keys(login_name)
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(login_password_box)
-    ).send_keys(login_password)
-    driver.save_screenshot('screenshot/login.png')
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(login_button)
-    ).click()
-
-def element_selection(driver,element):
-    WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(element)
-    ).click()
+#def element_selection(driver,element):
+#    WebDriverWait(driver, 10).until(
+#        EC.element_to_be_clickable(element)
+#    ).click()
 
 #def is_element_visible(driver, element) -> bool:
 #    
